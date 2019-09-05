@@ -1,6 +1,7 @@
 import distance from './distance.js';
 
 import hasEdge from './hasEdge.js';
+import isSameEdge from './isSameEdge.js';
 
 import createEdgesList from './createEdgesList.js';
 import createDegreesList from './createDegreesList.js';
@@ -15,6 +16,7 @@ import createPositionVector from './createPositionVector.js';
 export {
   distance,
   hasEdge,
+  isSameEdge,
   createEdgesList,
   createDegreesList,
   createNodesList,

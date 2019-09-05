@@ -8,6 +8,7 @@
     "generate": "node --experimental-modules src/generate.js",
     "eades": "node --experimental-modules src/resultsEades.js",
     "fr": "node --experimental-modules src/resultsFruchtermanReingold.js",
+    "sm": "node --experimental-modules src/resultsSM.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

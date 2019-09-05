@@ -3,10 +3,11 @@
 /* eslint-disable no-undef */
 
 function preload() {
-  const algo = 'eades';
+  const algo = 'sa';
   const fileName = 'cubical_graph.json';
   data = loadJSON(`data/results/${algo}/${fileName}`);
   graph = loadJSON(`data/graphs/${fileName}`);
+  positionsCount = Object.keys(data).length;
 }
 
 function createEdgesVector(edges) {
@@ -105,7 +106,7 @@ function instant(len) {
   // ellipse(500, 500, 16, 16);
 }
 
-function animate(iteration) {
+function animate(iteration, maxIterations) {
   // log draw loop cunter
 
   // set backround
@@ -138,8 +139,16 @@ function animate(iteration) {
   averageX = 0;
   averageY = 0;
 
+  if (iteration < maxIterations) {
+    console.log(`${(iteration * 100) / maxIterations}%`);
+    for (let i = 0; i < nodesCount; i += 1) {
+      currnetPositon[i * 2] += data[iteration][i * 2];
+      currnetPositon[i * 2 + 1] += data[iteration][i * 2 + 1];
+    }
+  }
+
   // move drawing to middle
-  if (iteration >= positionsCount) {
+  if (iteration === maxIterations) {
     console.log(`here`);
     for (let i = 0; i < nodesCount; i += 1) {
       averageX += currnetPositon[i * 2];
@@ -155,20 +164,14 @@ function animate(iteration) {
       currnetPositon[i * 2] += 500;
       currnetPositon[i * 2 + 1] += 500;
     }
-  } else {
-    console.log(`${(iteration * 100) / positionsCount}%`);
-    for (let i = 0; i < nodesCount; i += 1) {
-      currnetPositon[i * 2] += data[iteration][i * 2];
-      currnetPositon[i * 2 + 1] += data[iteration][i * 2 + 1];
-    }
   }
 }
 
 let counter = 1;
 function draw() {
   val = slider.value();
-  instant(val);
-
-  // animate(counter);
+  animate(counter, positionsCount);
   counter += 1;
+  console.log(positionsCount);
+  // instant(val);
 }
