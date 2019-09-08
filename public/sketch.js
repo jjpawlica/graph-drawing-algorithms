@@ -3,7 +3,7 @@
 /* eslint-disable no-undef */
 
 function preload() {
-  const algo = 'sa';
+  const algo = 'ga';
   const fileName = 'cubical_graph.json';
   data = loadJSON(`data/results/${algo}/${fileName}`);
   graph = loadJSON(`data/graphs/${fileName}`);
@@ -100,6 +100,7 @@ function instant(len) {
   noStroke();
   for (let i = 0; i < nodesCount; i += 1) {
     ellipse(finalPosition[i * 2], finalPosition[i * 2 + 1], 16, 16);
+    text(i, finalPosition[i * 2], finalPosition[i * 2 + 1] - 20);
   }
 
   // fill(0, 255, 0);
@@ -147,6 +148,7 @@ function animate(iteration, maxIterations) {
     }
   }
 
+
   // move drawing to middle
   if (iteration === maxIterations) {
     console.log(`here`);
@@ -167,11 +169,11 @@ function animate(iteration, maxIterations) {
   }
 }
 
-let counter = 1;
+// let counter = 1;
 function draw() {
   val = slider.value();
-  animate(counter, positionsCount);
-  counter += 1;
-  console.log(positionsCount);
-  // instant(val);
+  // animate(counter, positionsCount);
+  // counter += 1;
+  // console.log(positionsCount);
+  instant(val);
 }

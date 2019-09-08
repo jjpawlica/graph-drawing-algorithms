@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 
-import simulatedAnnealing from './algorithms/simulatedAnnealing.js';
+import tabuSearch from './algorithms/tabuSearch.js';
 
 // Paramatry algorytmu
 const seed = '12345';
@@ -9,34 +9,25 @@ const heigh = 1000;
 const timer = 60000;
 const iterations = 10000;
 
-// Grafy z plików
 // const data = JSON.parse(fs.readFileSync(`./public/data/graphs/cubical_graph.json`, 'utf8'));
 // const { graph } = data;
 
-// simulatedAnnealing(`public/data/results/sa/cubical_graph.json`, graph, width, heigh, seed, time, iterations);
+// tabuSearch(`public/data/results/ts/cubical_graph.json`, graph, width, heigh, seed, timer, iterations);
 
 const files = fs.readdirSync('public/data/graphs');
 const graphNames = files.map(item => item.slice(0, -5));
 
-const resultsPath = 'public/data/results/sa';
+const resultsPath = 'public/data/results/ts';
 const resultsTimes = [];
 
-// ===== RUN SIMULATED ANNEALING ===== /;
+// ===== RUN TABU SEARCH ===== /;
 
 for (const [index, graphName] of graphNames.entries()) {
   const data = JSON.parse(fs.readFileSync(`./public/data/graphs/${graphName}.json`, 'utf8'));
   const { graph } = data;
   console.log(`${index + 1}/${graphNames.length}`);
 
-  const [time, count] = simulatedAnnealing(
-    `${resultsPath}/${graphName}.json`,
-    graph,
-    width,
-    heigh,
-    seed,
-    timer,
-    iterations
-  );
+  const [time, count] = tabuSearch(`${resultsPath}/${graphName}.json`, graph, width, heigh, seed, timer, iterations);
 
   resultsTimes.push({
     graphName,
@@ -45,4 +36,4 @@ for (const [index, graphName] of graphNames.entries()) {
   });
 }
 
-fs.writeFileSync('public/data/results/sa/results.json', JSON.stringify(resultsTimes, null, 4));
+fs.writeFileSync('public/data/results/ts/results.json', JSON.stringify(resultsTimes, null, 4));
