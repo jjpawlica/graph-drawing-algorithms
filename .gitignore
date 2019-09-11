@@ -61,8 +61,8 @@ typings/
 .next
 
 # data files
-public/data/results/eades
-public/data/results/fr
-public/data/results/ga
-public/data/results/sa
-public/data/results/ts
+public/data/results/eades/*.json
+public/data/results/fr/*.json
+public/data/results/ga/*.json
+public/data/results/sa/*.json
+public/data/results/ts/*.json
