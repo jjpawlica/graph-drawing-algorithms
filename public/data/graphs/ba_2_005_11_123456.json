@@ -1,0 +1,132 @@
+{
+    "graph": {
+        "directed": false,
+        "type": "BA_graph",
+        "metadata": {
+            "seed": "123456",
+            "nodesCount": 7,
+            "edgesCount": 11,
+            "density": 0.6363636363636364,
+            "meanDegree": 3.142857142857143,
+            "performance": 0,
+            "degrees": {
+                "1": 1,
+                "2": 3,
+                "5": 3
+            }
+        },
+        "nodes": [
+            {
+                "id": 1
+            },
+            {
+                "id": 2
+            },
+            {
+                "id": 3
+            },
+            {
+                "id": 4
+            },
+            {
+                "id": 5
+            },
+            {
+                "id": 6
+            },
+            {
+                "id": 7
+            }
+        ],
+        "edges": [
+            {
+                "source": 1,
+                "target": 2
+            },
+            {
+                "source": 2,
+                "target": 1
+            },
+            {
+                "source": 3,
+                "target": 2
+            },
+            {
+                "source": 2,
+                "target": 3
+            },
+            {
+                "source": 3,
+                "target": 2
+            },
+            {
+                "source": 2,
+                "target": 3
+            },
+            {
+                "source": 4,
+                "target": 3
+            },
+            {
+                "source": 3,
+                "target": 4
+            },
+            {
+                "source": 4,
+                "target": 3
+            },
+            {
+                "source": 3,
+                "target": 4
+            },
+            {
+                "source": 5,
+                "target": 3
+            },
+            {
+                "source": 3,
+                "target": 5
+            },
+            {
+                "source": 5,
+                "target": 2
+            },
+            {
+                "source": 2,
+                "target": 5
+            },
+            {
+                "source": 6,
+                "target": 4
+            },
+            {
+                "source": 4,
+                "target": 6
+            },
+            {
+                "source": 6,
+                "target": 2
+            },
+            {
+                "source": 2,
+                "target": 6
+            },
+            {
+                "source": 7,
+                "target": 4
+            },
+            {
+                "source": 4,
+                "target": 7
+            },
+            {
+                "source": 7,
+                "target": 4
+            },
+            {
+                "source": 4,
+                "target": 7
+            }
+        ]
+    }
+}

@@ -11,8 +11,7 @@
     "sm": "node --experimental-modules src/resultsSM.js",
     "ts": "node --experimental-modules src/resultsTS.js",
     "ga": "node --experimental-modules src/resultsGA.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "heuristics": "node --experimental-modules src/resultsSM.js && node --experimental-modules src/resultsTS.js "
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

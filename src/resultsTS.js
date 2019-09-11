@@ -9,18 +9,13 @@ const heigh = 1000;
 const timer = 60000;
 const iterations = 10000;
 
-// const data = JSON.parse(fs.readFileSync(`./public/data/graphs/cubical_graph.json`, 'utf8'));
-// const { graph } = data;
-
-// tabuSearch(`public/data/results/ts/cubical_graph.json`, graph, width, heigh, seed, timer, iterations);
-
 const files = fs.readdirSync('public/data/graphs');
 const graphNames = files.map(item => item.slice(0, -5));
 
 const resultsPath = 'public/data/results/ts';
 const resultsTimes = [];
 
-// ===== RUN TABU SEARCH ===== /;
+// ===== RUN TABU SEARCH ===== /
 
 for (const [index, graphName] of graphNames.entries()) {
   const data = JSON.parse(fs.readFileSync(`./public/data/graphs/${graphName}.json`, 'utf8'));

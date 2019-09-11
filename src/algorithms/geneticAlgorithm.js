@@ -1,4 +1,9 @@
 /* eslint-disable no-nested-ternary */
+
+// Title: Genetic Algorithm
+// Author: Jakub Jan Pawlica
+// Based on: Qing-Guo, Z., Hua-Yong, L., Wei, Z., Ya-Jun G. (2005), 'Drawing Undirected Graphs with Genetic Algorithms',  Advances in Natural Computation: First International Conference Part III , 28-36.
+
 import * as fs from 'fs';
 import seedrandom from 'seedrandom';
 
@@ -489,7 +494,7 @@ const geneticAlgorithm = (path, graph, width, height, seed, timer, iterations) =
   movements.push(initialPosition);
 
   let bestFitness = initialPopulationFitness[0][bestMember];
-  let bestPosition = [...initialPosition]
+  let bestPosition = [...initialPosition];
 
   let finalFitness = 0;
 

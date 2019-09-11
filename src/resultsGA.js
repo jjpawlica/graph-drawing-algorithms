@@ -9,42 +9,37 @@ const heigh = 1000;
 const timer = 60000;
 const iterations = 1000;
 
-const data = JSON.parse(fs.readFileSync(`./public/data/graphs/cubical_graph.json`, 'utf8'));
-const { graph } = data;
+const files = fs.readdirSync('public/data/graphs');
+const graphNames = files.map(item => item.slice(0, -5));
 
-console.log(geneticAlgorithm(`public/data/results/ga/cubical_graph.json`, graph, width, heigh, seed, timer, iterations));
+const resultsPath = 'public/data/results/ga';
+const resultsTimes = [];
 
-// const files = fs.readdirSync('public/data/graphs');
-// const graphNames = files.map(item => item.slice(0, -5));
+// ===== RUN GENETIC ALGORITHM ===== /
 
-// const resultsPath = 'public/data/results/ga';
-// const resultsTimes = [];
+for (const [index, graphName] of graphNames.entries()) {
+  const data = JSON.parse(fs.readFileSync(`./public/data/graphs/${graphName}.json`, 'utf8'));
+  const { graph } = data;
+  console.log(`${index + 1}/${graphNames.length}`);
 
-// // ===== RUN TABU SEARCH ===== /;
+  const [time, count, bestFitness, finalFitness, bestPostion] = geneticAlgorithm(
+    `${resultsPath}/${graphName}.json`,
+    graph,
+    width,
+    heigh,
+    seed,
+    timer,
+    iterations
+  );
 
-// for (const [index, graphName] of graphNames.entries()) {
-//     const data = JSON.parse(fs.readFileSync(`./public/data/graphs/${graphName}.json`, 'utf8'));
-//     const { graph } = data;
-//     console.log(`${index + 1}/${graphNames.length}`);
+  resultsTimes.push({
+    graphName,
+    time,
+    counter: count,
+    bestFitness,
+    finalFitness,
+    bestPostion
+  });
+}
 
-//     const [time, count, bestFitness, finalFitness, bestPostion] = geneticAlgorithm(
-//         `${resultsPath}/${graphName}.json`,
-//         graph,
-//         width,
-//         heigh,
-//         seed,
-//         timer,
-//         iterations
-//     );
-
-//     resultsTimes.push({
-//         graphName,
-//         time,
-//         counter: count,
-//         bestFitness,
-//         finalFitness,
-//         bestPostion
-//     });
-// }
-
-// fs.writeFileSync('public/data/results/ga/results.json', JSON.stringify(resultsTimes, null, 4));
+fs.writeFileSync('public/data/results/ga/results.json', JSON.stringify(resultsTimes, null, 4));

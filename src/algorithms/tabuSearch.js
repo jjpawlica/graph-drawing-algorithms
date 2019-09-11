@@ -1,4 +1,9 @@
 /* eslint-disable no-nested-ternary */
+
+// Title: Tabu Search
+// Author: Jakub Jan Pawlica
+// Based on: Dib, F., Rodgers, P. (2014), 'A Tabu Search Based Approach for Graph Layout', Journal of Visual Languages & Computing 25(6) , 284-291.
+
 import * as fs from 'fs';
 import seedrandom from 'seedrandom';
 

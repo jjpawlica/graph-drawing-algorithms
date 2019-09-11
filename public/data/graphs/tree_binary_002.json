@@ -1,0 +1,86 @@
+{
+    "graph": {
+        "directed": false,
+        "type": "binary_tree",
+        "metadata": {
+            "height": 2,
+            "nodesCount": 7,
+            "edgesCount": 6,
+            "density": 1.1666666666666667,
+            "performance": 0
+        },
+        "nodes": [
+            {
+                "id": 1
+            },
+            {
+                "id": 2
+            },
+            {
+                "id": 3
+            },
+            {
+                "id": 4
+            },
+            {
+                "id": 5
+            },
+            {
+                "id": 6
+            },
+            {
+                "id": 7
+            }
+        ],
+        "edges": [
+            {
+                "source": 1,
+                "target": 2
+            },
+            {
+                "source": 2,
+                "target": 1
+            },
+            {
+                "source": 1,
+                "target": 3
+            },
+            {
+                "source": 3,
+                "target": 1
+            },
+            {
+                "source": 2,
+                "target": 4
+            },
+            {
+                "source": 4,
+                "target": 2
+            },
+            {
+                "source": 2,
+                "target": 5
+            },
+            {
+                "source": 5,
+                "target": 2
+            },
+            {
+                "source": 3,
+                "target": 6
+            },
+            {
+                "source": 6,
+                "target": 3
+            },
+            {
+                "source": 3,
+                "target": 7
+            },
+            {
+                "source": 7,
+                "target": 3
+            }
+        ]
+    }
+}

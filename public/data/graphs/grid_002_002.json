@@ -1,0 +1,62 @@
+{
+    "graph": {
+        "directed": false,
+        "type": "square_grid_graph",
+        "metadata": {
+            "width": 2,
+            "height": 2,
+            "nodesCount": 4,
+            "edgesCount": 4,
+            "density": 1,
+            "performance": 0
+        },
+        "nodes": [
+            {
+                "id": 1
+            },
+            {
+                "id": 2
+            },
+            {
+                "id": 3
+            },
+            {
+                "id": 4
+            }
+        ],
+        "edges": [
+            {
+                "source": 1,
+                "target": 2
+            },
+            {
+                "source": 2,
+                "target": 1
+            },
+            {
+                "source": 3,
+                "target": 4
+            },
+            {
+                "source": 4,
+                "target": 3
+            },
+            {
+                "source": 1,
+                "target": 3
+            },
+            {
+                "source": 3,
+                "target": 1
+            },
+            {
+                "source": 2,
+                "target": 4
+            },
+            {
+                "source": 4,
+                "target": 2
+            }
+        ]
+    }
+}

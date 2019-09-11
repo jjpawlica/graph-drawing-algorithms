@@ -4,7 +4,8 @@
 
 function preload() {
   const algo = 'ga';
-  const fileName = 'cubical_graph.json';
+  const file = 'complete_007';
+  const fileName = `${file}.json`;
   data = loadJSON(`data/results/${algo}/${fileName}`);
   graph = loadJSON(`data/graphs/${fileName}`);
   positionsCount = Object.keys(data).length;
@@ -100,7 +101,7 @@ function instant(len) {
   noStroke();
   for (let i = 0; i < nodesCount; i += 1) {
     ellipse(finalPosition[i * 2], finalPosition[i * 2 + 1], 16, 16);
-    text(i, finalPosition[i * 2], finalPosition[i * 2 + 1] - 20);
+    // text(i, finalPosition[i * 2], finalPosition[i * 2 + 1] - 20);
   }
 
   // fill(0, 255, 0);
@@ -147,7 +148,6 @@ function animate(iteration, maxIterations) {
       currnetPositon[i * 2 + 1] += data[iteration][i * 2 + 1];
     }
   }
-
 
   // move drawing to middle
   if (iteration === maxIterations) {

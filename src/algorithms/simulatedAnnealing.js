@@ -1,3 +1,7 @@
+// Title: Simulated Annealing
+// Author: Jakub Jan Pawlica
+// Based on: Davidson, R., Harel, D. (1996), 'Drawing Graphs Nicely Using Simulated Annealing', ACM Transactions on Graphics 15(4) , 301-331.
+
 import * as fs from 'fs';
 import seedrandom from 'seedrandom';
 

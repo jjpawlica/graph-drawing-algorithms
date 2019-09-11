@@ -1,0 +1,92 @@
+{
+    "graph": {
+        "directed": false,
+        "type": "BA_graph",
+        "metadata": {
+            "seed": "123456",
+            "nodesCount": 7,
+            "edgesCount": 6,
+            "density": 1.1666666666666667,
+            "meanDegree": 1.7142857142857142,
+            "performance": 0,
+            "degrees": {
+                "1": 5,
+                "3": 1,
+                "4": 1
+            }
+        },
+        "nodes": [
+            {
+                "id": 1
+            },
+            {
+                "id": 2
+            },
+            {
+                "id": 3
+            },
+            {
+                "id": 4
+            },
+            {
+                "id": 5
+            },
+            {
+                "id": 6
+            },
+            {
+                "id": 7
+            }
+        ],
+        "edges": [
+            {
+                "source": 1,
+                "target": 2
+            },
+            {
+                "source": 2,
+                "target": 1
+            },
+            {
+                "source": 3,
+                "target": 2
+            },
+            {
+                "source": 2,
+                "target": 3
+            },
+            {
+                "source": 4,
+                "target": 2
+            },
+            {
+                "source": 2,
+                "target": 4
+            },
+            {
+                "source": 5,
+                "target": 4
+            },
+            {
+                "source": 4,
+                "target": 5
+            },
+            {
+                "source": 6,
+                "target": 4
+            },
+            {
+                "source": 4,
+                "target": 6
+            },
+            {
+                "source": 7,
+                "target": 2
+            },
+            {
+                "source": 2,
+                "target": 7
+            }
+        ]
+    }
+}

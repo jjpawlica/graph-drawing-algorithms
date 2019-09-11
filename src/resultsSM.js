@@ -9,19 +9,13 @@ const heigh = 1000;
 const timer = 60000;
 const iterations = 10000;
 
-// Grafy z plików
-// const data = JSON.parse(fs.readFileSync(`./public/data/graphs/cubical_graph.json`, 'utf8'));
-// const { graph } = data;
-
-// simulatedAnnealing(`public/data/results/sa/cubical_graph.json`, graph, width, heigh, seed, time, iterations);
-
 const files = fs.readdirSync('public/data/graphs');
 const graphNames = files.map(item => item.slice(0, -5));
 
 const resultsPath = 'public/data/results/sa';
 const resultsTimes = [];
 
-// ===== RUN SIMULATED ANNEALING ===== /;
+// ===== RUN SIMULATED ANNEALING ===== /
 
 for (const [index, graphName] of graphNames.entries()) {
   const data = JSON.parse(fs.readFileSync(`./public/data/graphs/${graphName}.json`, 'utf8'));
